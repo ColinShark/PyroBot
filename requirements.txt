@@ -1,1 +1,1 @@
--e git+http://github.com/Pyrogram/Pyrogram#egg=Pyrogram
+https://github.com/pyrogram/pyrogram/archive/develop.zip
