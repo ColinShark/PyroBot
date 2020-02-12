@@ -1,0 +1,1 @@
+-e git+http://github.com/Pyrogram/Pyrogram#egg=Pyrogram
