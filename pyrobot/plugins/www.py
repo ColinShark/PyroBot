@@ -72,3 +72,12 @@ def i_am_speed(bot: PyroBot, message: Message):
         isp=results["client"]["isp"],
     )
     message.edit_text(speed_message)
+
+
+@PyroBot.on_message(Filters.command("ping", "?") & Filters.me)
+def ping_me(bot: PyroBot, message: Message):
+    start = datetime.now()
+    message.edit_text("`Pong!`")
+    end = datetime.now()
+    ms = (end - start).microseconds / 1000
+    message.edit_text(f"**Pong!**\n`{ms} ms`")
