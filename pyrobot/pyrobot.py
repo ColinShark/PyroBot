@@ -30,7 +30,6 @@ class PyroBot(Client):
         config.read(config_file)
 
         plugins = dict(root=f"{name}/plugins")
-        print(plugins)
         super().__init__(
             session_name=name,
             app_version=f"PyroBot v{__version__}",
