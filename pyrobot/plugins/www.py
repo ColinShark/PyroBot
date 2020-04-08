@@ -54,14 +54,14 @@ def speed_convert(size):
 
 
 @PyroBot.on_message(Filters.command("speed", "?") & Filters.me)
-def i_am_speed(bot: PyroBot, message: Message):
-    message.edit_text("\n".join(SPEED_TEXT[:1]))
+async def i_am_speed(bot: PyroBot, message: Message):
+    await message.edit_text("\n".join(SPEED_TEXT[:1]))
     speed = speedtest.Speedtest()
 
     for i, x in enumerate(
         [speed.get_best_server, speed.download, speed.upload, speed.results.dict]
     ):
-        message.edit_text("\n".join(SPEED_TEXT[: i + 2]))
+        await message.edit_text("\n".join(SPEED_TEXT[: i + 2]))
         results = x()
 
     speed_message = SPEEDTEST.format(
@@ -71,13 +71,13 @@ def i_am_speed(bot: PyroBot, message: Message):
         upload=speed_convert(results["upload"]),
         isp=results["client"]["isp"],
     )
-    message.edit_text(speed_message)
+    await message.edit_text(speed_message)
 
 
 @PyroBot.on_message(Filters.command("ping", "?") & Filters.me)
-def ping_me(bot: PyroBot, message: Message):
+async def ping_me(bot: PyroBot, message: Message):
     start = datetime.now()
-    message.edit_text("`Pong!`")
+    await message.edit_text("`Pong!`")
     end = datetime.now()
     ms = (end - start).microseconds / 1000
-    message.edit_text(f"**Pong!**\n`{ms} ms`")
+    await message.edit_text(f"**Pong!**\n`{ms} ms`")

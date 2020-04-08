@@ -14,8 +14,8 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import asyncio
 import os
-import time
 
 import gtts
 from pyrogram import Filters, Message
@@ -28,9 +28,9 @@ gtts_langs = gtts.lang.tts_langs()
 
 
 @PyroBot.on_message(Filters.me & Filters.command("v", "!"))
-def alive(app: PyroBot, message: Message):
+async def alive(app: PyroBot, message: Message):
     if len(message.command) == 1:
-        message.delete()
+        await message.delete()
         return
 
     if message.command[-1] not in gtts_langs:
@@ -43,19 +43,21 @@ def alive(app: PyroBot, message: Message):
     speech = gtts.gTTS(words_to_say, lang=language)
     speech.save("text_to_speech.oog")
     try:
-        app.send_voice(
+        await app.send_voice(
             chat_id=message.chat.id,
             voice="text_to_speech.oog",
             reply_to_message_id=helpers.reply_id(message),
         )
     except ChatSendMediaForbidden:
-        message.edit_text(
+        await message.edit_text(
             "Voice Messages aren't allowed here.\nCopy sent to Saved Messages."
         )
-        app.send_voice(chat_id="me", voice="text_to_speech.oog", caption=words_to_say)
-        time.sleep(2)
+        await app.send_voice(
+            chat_id="me", voice="text_to_speech.oog", caption=words_to_say
+        )
+        asyncio.sleep(2)
     try:
         os.remove("text_to_speech.oog")
     except FileNotFoundError:
         pass
-    message.delete()
+    await message.delete()

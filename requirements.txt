@@ -1,2 +1,5 @@
-https://github.com/pyrogram/pyrogram/archive/develop.zip
+https://github.com/pyrogram/pyrogram/archive/asyncio.zip
+tgcrypto
 speedtest-cli
+gTTS
+SpeechRecognition

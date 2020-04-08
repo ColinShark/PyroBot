@@ -20,5 +20,5 @@ from ..pyrobot import PyroBot
 
 
 @PyroBot.on_message(Filters.me & Filters.command("alive", "."))
-def alive(app: PyroBot, message: Message):
-    message.edit_text("`I'm alive, Master`")
+async def alive(app: PyroBot, message: Message):
+    await message.edit_text("`I'm alive, Master`")

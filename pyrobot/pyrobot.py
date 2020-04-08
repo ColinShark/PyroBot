@@ -39,10 +39,10 @@ class PyroBot(Client):
             plugins=plugins,
         )
 
-    def start(self):
-        super().start()
+    async def start(self):
+        await super().start()
         print(f"PyroBot started with Version v{__version__}")
 
-    def stop(self):
-        super().stop()
+    async def stop(self):
+        await super().stop()
         print("PyroBot stopped. Bye.")
