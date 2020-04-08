@@ -1,7 +1,7 @@
 # PyroBot 🔥🤖 
 A [Telegram] Userbot powered by [Pyrogram].
 
-[![Python 3.6](https://img.shields.io/badge/Python-3.6%20or%20newer-blue)](https://www.python.org/downloads/release/python-360/)
+[![Python 3.6+](https://img.shields.io/badge/Python-3.6%20or%20newer-blue)](https://www.python.org/downloads/release/python-360/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 ## Setup
