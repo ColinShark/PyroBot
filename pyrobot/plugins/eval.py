@@ -47,7 +47,7 @@ async def evaluation(app: PyroBot, message: Message):
     )
 
     if len(final_output) > 4096:
-        with open("eval.text", "w+", encoding="utf8") as out_file:
+        with open("eval.txt", "w+", encoding="utf8") as out_file:
             out_file.write(str(final_output))
         await app.send_document(
             chat_id=message.chat.id,
