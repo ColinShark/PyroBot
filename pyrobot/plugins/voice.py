@@ -55,7 +55,7 @@ async def alive(app: PyroBot, message: Message):
         await app.send_voice(
             chat_id="me", voice="text_to_speech.oog", caption=words_to_say
         )
-        asyncio.sleep(2)
+        await asyncio.sleep(2)
     try:
         os.remove("text_to_speech.oog")
     except FileNotFoundError:
