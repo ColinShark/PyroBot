@@ -1,17 +1,19 @@
 # PyroBot 🔥🤖 
-A [Telegram] Userbot powered by [Pyrogram].
+A [Telegram](https://telegram.org) Userbot powered by [Pyrogram](https://pyrogram.org).
 
-[![Python 3.6+](https://img.shields.io/badge/Python-3.6%20or%20newer-blue)](https://www.python.org/downloads/release/python-360/)
+[![Python 3.6](https://img.shields.io/badge/Python-3.6%20or%20newer-blue)](https://www.python.org/downloads/release/python-360/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 ## Setup
-You have to obtain your personal API credentials from [Telegram][API]. Fill these into the [sample config file][Config].
+You have to obtain your personal API credentials from [Telegram](https://my.telegram.org?to=apps).
+Fill these into the [sample config file](pyrobot.ini.sample).
 
 1. `git clone https://github.com/ColinTheShark/PyroBot.git`
-2. Copy [`pyrobot.ini.sample`][Config] to `pyrobot.ini` and fill it out as instructed
+2. Copy or rename [`pyrobot.ini.sample`](pyrobot.ini.sample) to `pyrobot.ini` and fill it out as instructed
 3. Start PyroBot with `python -m pyrobot`
 
 You can now log in via Pyrogram and send `.alive` to see your PyroBot working.
+If needed, there are [more detailed instructions in the Wiki](https://github.com/ColinTheShark/PyroBot/wiki/Setup)
 
 ## Disclaimer
 ```Python
@@ -24,9 +26,3 @@ You can now log in via Pyrogram and send `.alive` to see your PyroBot working.
 ## Copyright & License
 * Copyright (C) 2020 Colin <<https://github.com/ColinTheShark>>
 * Licensed under the terms of the [GNU Lesser General Public License v3 or later (LGPLv3+)](COPYING.lesser)
-
-<!-- Links -->
-[Telegram]: https://telegram.org
-[Pyrogram]: https://pyrogram.org
-[API]: https://my.telegram.org?to=apps
-[Config]: pyrobot.ini.sample
