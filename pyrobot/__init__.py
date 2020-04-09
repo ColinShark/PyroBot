@@ -20,5 +20,8 @@ __version__ = "0.0.1"
 
 if version_info[:2] < (3, 6):
     # Verify Python 3.6+ is used
-    print("Python 3.6 or newer is required by PyroBot")
+    print(
+        "You're using Python {}.{},".format(*version_info[:2]),
+        "but Python 3.6 or newer is required by PyroBot",
+    )
     quit()
