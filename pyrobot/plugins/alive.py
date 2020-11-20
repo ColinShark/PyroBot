@@ -14,11 +14,12 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from pyrogram import Filters, Message
+from pyrogram import filters
+from pyrogram.types import Message
 
-from ..pyrobot import PyroBot
+from pyrobot.pyrobot import PyroBot
 
 
-@PyroBot.on_message(Filters.me & Filters.command("alive", "."))
+@PyroBot.on_message(filters.me & filters.command("alive", "."))
 async def alive(app: PyroBot, message: Message):
     await message.edit_text("`I'm alive, Master`")
