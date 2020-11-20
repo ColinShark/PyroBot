@@ -17,9 +17,10 @@
 from datetime import datetime
 
 import speedtest
-from pyrogram import Filters, Message
+from pyrogram import filters
+from pyrogram.types import Message
 
-from ..pyrobot import PyroBot
+from pyrobot.pyrobot import PyroBot
 
 SPEED_TEXT = [
     "`Running speed test...`",
@@ -53,7 +54,7 @@ def speed_convert(size):
     return f"{round(size, 2)} {units[zero]}"
 
 
-@PyroBot.on_message(Filters.command("speed", "?") & Filters.me)
+@PyroBot.on_message(filters.command("speed", "?") & filters.me)
 async def i_am_speed(bot: PyroBot, message: Message):
     await message.edit_text("\n".join(SPEED_TEXT[:1]))
     speed = speedtest.Speedtest()
@@ -74,7 +75,7 @@ async def i_am_speed(bot: PyroBot, message: Message):
     await message.edit_text(speed_message)
 
 
-@PyroBot.on_message(Filters.command("ping", "?") & Filters.me)
+@PyroBot.on_message(filters.command("ping", "?") & filters.me)
 async def ping_me(bot: PyroBot, message: Message):
     start = datetime.now()
     await message.edit_text("`Pong!`")

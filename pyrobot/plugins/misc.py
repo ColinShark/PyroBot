@@ -14,13 +14,14 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from pyrogram import Filters, Message
-from pyrogram.api.functions.messages import MarkDialogUnread
+from pyrogram import filters
+from pyrogram.types import Message
+from pyrogram.raw.functions.messages import MarkDialogUnread
 
-from ..pyrobot import PyroBot
+from pyrobot.pyrobot import PyroBot
 
 
-@PyroBot.on_message(Filters.command("un", ".") & Filters.me)
+@PyroBot.on_message(filters.command("un", ".") & filters.me)
 async def unread_chat(app: PyroBot, message: Message):
     await message.delete()
     await app.send(

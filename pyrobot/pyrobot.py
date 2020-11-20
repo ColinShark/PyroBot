@@ -18,13 +18,13 @@ from configparser import ConfigParser
 
 from pyrogram import Client
 
-from . import __version__
+__version__ = "1.0.0"
 
 
 class PyroBot(Client):
     def __init__(self):
         name = self.__class__.__name__.lower()
-        config_file = f"{name}.ini"
+        config_file = f"pyrobot/{name}.ini"
 
         config = ConfigParser()
         config.read(config_file)

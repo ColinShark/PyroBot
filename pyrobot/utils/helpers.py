@@ -1,4 +1,4 @@
-from pyrogram import Message
+from pyrogram.types import Message
 
 
 def reply_id(message: Message):
