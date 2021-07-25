@@ -28,7 +28,7 @@ gtts_langs = gtts.lang.tts_langs()
 
 
 @PyroBot.on_message(Filters.me & Filters.command("v", "!"))
-async def alive(app: PyroBot, message: Message):
+async def misc(app: PyroBot, message: Message):
     if len(message.command) == 1:
         await message.delete()
         return
