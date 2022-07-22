@@ -1,3 +1,8 @@
+# Abandoned
+As you can see from the [commit history](https://github.com/ColinShark/PyroBot/commits/master), this is pretty much abandoned.
+Do with this project as you please, as long as you adhere to the License.  
+_No further support will be offered from me._
+
 # PyroBot 🔥🤖 
 A [Telegram](https://telegram.org) Userbot powered by [Pyrogram](https://pyrogram.org).
 
